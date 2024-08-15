@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="Safe self-Diffusion Distillation">
+  <meta property="og:title" content="Safe self-Diffusion Distillation"/>
+  <meta property="og:description" content="ICML 2023 Workshop on Deploying Generative AI"/>
+  <meta property="og:url" content="https://nannullna.github.io/safe-diffusion"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+  <meta name="twitter:title" content="Safe self-Diffusion Distillation">
+  <meta name="twitter:description" content="Safe self-Diffusion Distillation">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="Safe self-Diffusion Distillation">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Safe self-Diffusion Distillation</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet"
+    href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+  
+
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Towards Safe Self-Distillation of Internet-Scale Text-to-Image Diffusion Models</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://github.com/nannullna" target="_blank">Sanghyun Kim</a>,</span>
+              <span class="author-block">
+                <a href="https://github.com/ciao-seohyeon" target="_blank">Seohyeon Jung</a>,</span>
+                <!-- <sup>*</sup> indicates equal contribution -->
+              <span class="author-block">
+                <a href="https://github.com/balhaekim" target="_blank">Balhae Kim</a>,</span>
+              <span class="author-block">
+                <a href="https://github.com/moon4sake" target="_blank">Moonseok Choi</a>,</span>
+              <span class="author-block">
+                <a href="https://alinlab.kaist.ac.kr/shin.html" target="_blank">Jinwoo Shin</a>,</span>
+              <span class="author-block">
+                <a href="https://juho-lee.github.io/" target="_blank">Juho Lee</a>
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">KAIST, Republic of Korea<br>ICML 2023 - Challenges in Deployable Generative AI Workshop</span>
+              <!-- <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span> -->
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                    <!-- Openreview link -->
+                <span class="link-block">
+                  <a href="https://openreview.net/forum?id=6zALFeqxY0" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>OpenReview</span>
+                  </a>
+                </span>
+
+                    <!-- Supplementary PDF link
+                    <span class="link-block">
+                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Supplementary</span>
+                    </a>
+                  </span>
+                   -->
+
+                  <!-- Github link -->
+                <span class="link-block">
+                  <a href="https://github.com/nannullna/safe-diffusion" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+                </span>
+
+                <!-- ArXiv abstract Link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2307.05977" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<!-- Teaser video-->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video poster="" id="tree" autoplay controls muted loop height="100%">
+        <!-- Your video here -->
+        <source src="static/videos/main.mp4"
+        type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        Artist concept removal on the generated images with the same initial latent code. 
+      </h2>
+    </div>
+  </div>
+</section>
+<!-- End teaser video -->
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Large-scale image generation models, with impressive quality made possible by the vast amount of data available on the Internet, raise
+            social concerns that these models may generate harmful or copyrighted content. The biases
+            and harmfulness arise throughout the entire training process and are hard to completely remove,
+            which have become significant hurdles to the safe deployment of these models. In this paper, we
+            propose a method called SDD to prevent problematic content generation in text-to-image diffusion
+            models. We self-distill the diffusion model to guide the noise estimate conditioned on the target
+            removal concept to match the unconditional one.
+            Compared to the previous methods, our method eliminates a much greater proportion of harmful
+            content from the generated images without degrading the overall image quality. Furthermore,
+            our method allows the removal of multiple concepts at once, whereas previous works are limited
+            to removing a single concept at a time.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+<!-- Concept figure -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <!-- Paper video. -->
+      <h2 class="title is-3">Method</h2>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <img src="static/imgs/concept_figure_final.svg" alt="Concept figure" width="80%">
+          <p>
+            We propose a method called SDD to prevent problematic content generation in text-to-image diffusion. We self-distill the diffusion model to guide the noise estimate conditioned on the target removal concept to match the unconditional one. 
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End concept figure -->
+
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Quantitative Results</h2>
+      <!-- Table of 7 by 5 containing all zeros -->
+      <h3 class="title is-4">NSFW Removal</h3>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <div class="table-container">
+            <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+              <thead>
+                <tr>
+                  <th>Prompt</th>
+                  <th>"body"</th>
+                  <th colspan="3">COCO-30k</th>
+                </tr>
+                <tr>
+                  <th>Method</th>
+                  <th>% Nude</th>
+                  <th>FID</th>
+                  <th>LPIPS</th>
+                  <th>CLIP</th>
+                </tr>
+              </thead>
+              <!-- First row -->
+              <tr>
+                <th>SD</th>
+                <td>74.18</td>
+                <td>21.348</td>
+                <td>N/A</td>
+                <td>0.2771</td>
+              </tr>
+              <!-- Second row -->
+              <tr>
+                <th>SD+NEG</th>
+                <td>20.44</td>
+                <td>14.278</td>
+                <td>0.1954</td>
+                <td>0.2706</td>
+              </tr>
+              <!-- Third row -->
+              <tr>
+                <th>SLD-medium</th>
+                <td>70.02</td>
+                <td>17.201</td>
+                <td>0.1015</td>
+                <td>0.2689</td>
+              </tr>
+              <!-- Fourth row -->
+              <tr>
+                <th>SLD-max</th>
+                <td>4.30</td>
+                <td>13.634</td>
+                <td>0.1574</td>
+                <td>0.2709</td>
+              </tr>
+              <!-- Fifth row -->
+              <tr>
+                <th>SEGA</th>
+                <td>72.04</td>
+                <td> - </td>
+                <td> - </td>
+                <td> - </td>
+              </tr>
+              <!-- Sixth row -->
+              <tr>
+                <th>ESD-u-3</th>
+                <td>43.30</td>
+                <td> - </td>
+                <td> - </td>
+                <td> - </td>
+              </tr>
+              <!-- Sixth row -->
+              <tr>
+                <th>ESD-x-3</th>
+                <td>14.32</td>
+                <td>13.808</td>
+                <td>0.1587</td>
+                <td>0.2690</td>
+              </tr>
+              <!-- Sixth row -->
+              <tr>
+                <th>SDD (ours)</th>
+                <td><b>1.68</b></td>
+                <td>15.423</td>
+                <td>0.1797</td>
+                <td>0.2673</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="title is-4">I2P Multi-Concept Removal</h3>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <div class="table-container">
+            <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+              <thead>
+                <tr>
+                  <th>Prompt</th>
+                  <th>"body"</th>
+                  <th>"I2P"</th>
+                  <th colspan="3">COCO-30k</th>
+                </tr>
+                <tr>
+                  <th>Method</th>
+                  <th>% Nude</th>
+                  <th>% Harm</th>
+                  <th>FID</th>
+                  <th>LPIPS</th>
+                  <th>CLIP</th>
+                </tr>
+              </thead>
+              <!-- First row -->
+              <tr>
+                <th>SD</th>
+                <td>74.18</td>
+                <td>24.42</td>
+                <td>21.348</td>
+                <td>N/A</td>
+                <td>0.2771</td>
+              </tr>
+              <!-- Second row -->
+              <tr>
+                <th>SD+NEG</th>
+                <td>63.78</td>
+                <td>9.51</td>
+                <td>18.021</td>
+                <td>0.1925</td>
+                <td>0.2659</td>
+              </tr>
+              <!-- Third row -->
+              <tr>
+                <th>SLD-medium</th>
+                <td>74.16</td>
+                <td>7.42</td>
+                <td>14.794</td>
+                <td>0.4216</td>
+                <td>0.2720</td>
+              </tr>
+              <!-- Fourth row -->
+              <tr>
+                <th>SLD-max</th>
+                <td>56.78</td>
+                <td>5.19</td>
+                <td>21.729</td>
+                <td>0.4377</td>
+                <td>0.2572</td>
+              </tr>
+              <!-- Fifth row -->
+              <tr>
+                <th>SEGA</th>
+                <td>74.10</td>
+                <td>16.84</td>
+                <td> - </td>
+                <td> - </td>
+                <td> - </td>
+              </tr>
+              <!-- Sixth row -->
+              <tr>
+                <th>ESD-x-3</th>
+                <td>47.38</td>
+                <td>13.04</td>
+                <td>16.411</td>
+                <td>0.2036</td>
+                <td>0.2631</td>
+              </tr>
+              <!-- Sixth row -->
+              <tr>
+                <th>SDD (ours)</th>
+                <td><b>12.62</b></td>
+                <td><b>5.03</b></td>
+                <td>15.142</td>
+                <td>0.2443</td>
+                <td>0.2560</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- Image carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Artist Concept Removal</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-video1">
+          <video poster="" id="video1" autoplay controls muted loop height="100%">
+            <!-- Your video file here -->
+            <source src="static/videos/gogh_grid.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video2">
+          <video poster="" id="video2" autoplay controls muted loop height="100%">
+            <!-- Your video file here -->
+            <source src="static/videos/picasso_grid.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video3">
+          <video poster="" id="video3" autoplay controls muted loop height="100%">\
+            <!-- Your video file here -->
+            <source src="static/videos/kinkade_grid.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video4">
+          <video poster="" id="video4" autoplay controls muted loop height="100%">\
+            <!-- Your video file here -->
+            <source src="static/videos/eng_grid.mp4"
+            type="video/mp4">
+          </video>
+      </div>
+      <div class="item item-video5">
+        <video poster="" id="video5" autoplay controls muted loop height="100%">\
+          <!-- Your video file here -->
+          <source src="static/videos/warhol_grid.mp4"
+          type="video/mp4">
+        </video>
+    </div>
+  </div>
+</section>
+<!-- End image carousel -->
+
+
+<!-- Paper poster -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title">Resources</h2>
+      <h3 class="title is-4">Poster</h3>
+      <iframe  src="static/pdfs/poster_portrait_compressed.pdf" width="100%" height="550">
+      </iframe>
+    </div>
+  </div>
+
+  <div class="container is-max-desktop content">
+    <h3 class="title is-4">Pseudo-code</h3>
+    <pre><code class="language-python">def run_sdd(
+  unet: UNet2DConditionModel, scheduler: DDIMScheduler, text_encoder: CLIPTextModel,
+  concepts: List[str], n_iters: int=1500, m: float=0.999, s_g: float=3.0,
+) -> UNet2DConditionModel:
+  unet_ema = deepcopy(unet)
+  c_0, c_s = text_encoder(""), text_encoder(", ".join(concepts))
+  for _ in range(n_iters):
+    c_p = text_encoder(concepts[i % len(concepts)]) # Iterate over concepts
+    until = torch.randint((1,), 0, scheduler.total_steps-1)
+    z_t = torch.randn((1, 4, 64, 64), 0, 1) # Initial Gaussian noise z_T
+    with torch.no_grad():
+      for i, t in enumerate(scheduler.timesteps):
+        e_0, e_p = unet_ema(z_t, t, c_0), unet_ema(z_t, t, c_p)
+        e_tilde = e_0 + s_g * (e_p - e_0) # Sample latents z_t from the EMA model
+        z_t = scheduler(z_t, e_tilde, t)  # for T - t steps according to CFG
+        if i == until:
+          break
+    e_0, e_s = unet(z_t, t, c_0), unet(z_t, t, c_s)
+    loss = ((e_0.detach() - e_s) ** 2).mean() # L2-norm between two noise estimates
+    loss.backward()
+    optimizer.step()
+    optimizer.zero_grad()
+    with torch.no_grad():
+      for p, q in zip(unet_ema.parameters(), unet.parameters()):
+        p = m * p + (1 - m) * q # EMA update
+  return unet_ema
+    </code></pre>
+  </div>
+</div>
+</section>
+
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code class="language-plaintext">@misc{kim2023safe,
+  title={Towards Safe Self-Distillation of Internet-Scale Text-to-Image Diffusion Models}, 
+  author={Sanghyun Kim and Seohyeon Jung and Balhae Kim and Moonseok Choi and Jinwoo Shin and Juho Lee},
+  year={2023},
+  eprint={2307.05977},
+  archivePrefix={arXiv},
+  primaryClass={cs.CV},
+  booktitle={ICML 2023 Workshop on Challenges in Deployable Generative AI},
+}</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>.
+            You are free to borrow the of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+</body>
+</html>
