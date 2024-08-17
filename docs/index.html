@@ -4,22 +4,22 @@
   <meta charset="utf-8">
   <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
   <!-- Replace the content tag with appropriate information -->
-  <meta name="description" content="Safe self-Diffusion Distillation">
-  <meta property="og:title" content="Safe self-Diffusion Distillation"/>
-  <meta property="og:description" content="ICML 2023 Workshop on Deploying Generative AI"/>
-  <meta property="og:url" content="https://nannullna.github.io/safe-diffusion"/>
+  <meta name="description" content="Safeguard Text-to-Image Diffusion Models with Human Feedback Inversion (ECCV 2024)">
+  <meta property="og:title" content="Safeguard Human Feedback Inversion"/>
+  <meta property="og:description" content="Safeguard Text-to-Image Diffusion Models with Human Feedback Inversion (ECCV 2024)"/>
+  <meta property="og:url" content="https://nannullna.github.io/safeguard-hfi"/>
   <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
   <meta property="og:image" content="static/image/your_banner_image.png" />
   <meta property="og:image:width" content="1200"/>
   <meta property="og:image:height" content="630"/>
 
-  <meta name="twitter:title" content="Safe self-Diffusion Distillation">
-  <meta name="twitter:description" content="Safe self-Diffusion Distillation">
+  <meta name="twitter:title" content="Safeguard with Human Feedback Inversion">
+  <meta name="twitter:description" content="Safeguard with Human Feedback Inversion">
   <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
   <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
   <meta name="twitter:card" content="summary_large_image">
   <!-- Keywords for your paper to be indexed by-->
-  <meta name="keywords" content="Safe self-Diffusion Distillation">
+  <meta name="keywords" content="Diffusion, Text-to-image, Generative AI, Safeguard, Safety in AI">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Safe self-Diffusion Distillation</title>
@@ -56,7 +56,7 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Towards Safe Self-Distillation of Internet-Scale Text-to-Image Diffusion Models</h1>
+            <h1 class="title is-1 publication-title">Safeguard Text-to-Image Diffusion Models with Human Feedback Inversion</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
@@ -76,7 +76,7 @@
             </div>
 
             <div class="is-size-5 publication-authors">
-              <span class="author-block">KAIST, Republic of Korea<br>ICML 2023 - Challenges in Deployable Generative AI Workshop</span>
+              <span class="author-block">KAIST, Republic of Korea<br>The 18th European Conference on Computer Vision ECCV 2024</span>
               <!-- <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span> -->
             </div>
 
@@ -107,7 +107,7 @@
 
                   <!-- Github link -->
                 <span class="link-block">
-                  <a href="https://github.com/nannullna/safe-diffusion" target="_blank"
+                  <a href="https://github.com/nannullna/safeguard-hfi" target="_blank"
                   class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                     <i class="fab fa-github"></i>
@@ -118,7 +118,7 @@
 
                 <!-- ArXiv abstract Link -->
                 <span class="link-block">
-                  <a href="https://arxiv.org/abs/2307.05977" target="_blank"
+                  <a href="https://arxiv.org/abs/2407.21032" target="_blank"
                   class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                     <i class="ai ai-arxiv"></i>
@@ -160,17 +160,20 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Large-scale image generation models, with impressive quality made possible by the vast amount of data available on the Internet, raise
-            social concerns that these models may generate harmful or copyrighted content. The biases
-            and harmfulness arise throughout the entire training process and are hard to completely remove,
-            which have become significant hurdles to the safe deployment of these models. In this paper, we
-            propose a method called SDD to prevent problematic content generation in text-to-image diffusion
-            models. We self-distill the diffusion model to guide the noise estimate conditioned on the target
-            removal concept to match the unconditional one.
-            Compared to the previous methods, our method eliminates a much greater proportion of harmful
-            content from the generated images without degrading the overall image quality. Furthermore,
-            our method allows the removal of multiple concepts at once, whereas previous works are limited
-            to removing a single concept at a time.
+            This paper addresses the societal concerns arising from largescale text-to-image diffusion models for generating potentially harmful
+            or copyrighted content. Existing models rely heavily on internet-crawled
+            data, wherein problematic concepts persist due to incomplete filtration
+            processes. While previous approaches somewhat alleviate the issue, they
+            often rely on text-specified concepts, introducing challenges in accurately
+            capturing nuanced concepts and aligning model knowledge with human
+            understandings. In response, we propose a framework named Human
+            Feedback Inversion (HFI), where human feedback on model-generated
+            images is condensed into textual tokens guiding the mitigation or removal of problematic images. The proposed framework can be built upon
+            existing techniques for the same purpose, enhancing their alignment with
+            human judgment. By doing so, we simplify the training objective with a
+            self-distillation-based technique, providing a strong baseline for concept
+            removal. Our experimental results demonstrate our framework significantly reduces objectionable content generation while preserving image
+            quality, contributing to the ethical deployment of AI in the public sphere.
           </p>
         </div>
       </div>
@@ -481,19 +484,17 @@
 
 
 <!--BibTex citation -->
-  <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <h2 class="title">BibTeX</h2>
-      <pre><code class="language-plaintext">@misc{kim2023safe,
-  title={Towards Safe Self-Distillation of Internet-Scale Text-to-Image Diffusion Models}, 
-  author={Sanghyun Kim and Seohyeon Jung and Balhae Kim and Moonseok Choi and Jinwoo Shin and Juho Lee},
-  year={2023},
-  eprint={2307.05977},
-  archivePrefix={arXiv},
-  primaryClass={cs.CV},
-  booktitle={ICML 2023 Workshop on Challenges in Deployable Generative AI},
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code class="language-plaintext">@article{kim2024safeguard,
+  title={Safeguard Text-to-Image Diffusion Models with Human Feedback Inversion},
+  author={Kim, Sanghyun and Jung, Seohyeon and Kim, Balhae and Choi, Moonseok and Shin, Jinwoo and Lee, Juho},
+  booktitle={European Conference on Computer Vision},
+  year={2024},
+  organization={Springer}
 }</code></pre>
-    </div>
+</div>
 </section>
 <!--End BibTex citation -->
 
@@ -520,7 +521,7 @@
   
 <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
 
-    <!-- End of Statcounter Code -->
+<!-- End of Statcounter Code -->
 
 </body>
 </html>
